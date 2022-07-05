@@ -52,7 +52,7 @@ const SearchRecipes = () => {
         searchStatus === "Searching"?
           <h1>Searching</h1>
         : 
-        searchStatus === "Not Found"?
+        searchStatus === "Not found"?
           <h1>No Recipes found</h1>
         : 
         recipeList.hits.map(foods => (
