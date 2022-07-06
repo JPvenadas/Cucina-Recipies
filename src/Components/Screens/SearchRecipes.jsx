@@ -23,10 +23,10 @@ const SearchRecipes = () => {
     }
   }
 
-  function RecipeInfoNavigate(uri){
+  function RecipeInfoNavigate(recipe){
   let regex = /recipe\w+/ig;
-  let ID = uri.match(regex)
-  navigate(`/view:${ID}`)
+  let ID = recipe.uri.match(regex)
+  navigate(`/view:${ID}`, {state: recipe})
   }
   
   // this will be triggered for every refresh or route change
@@ -61,7 +61,7 @@ const SearchRecipes = () => {
           <h1>No Recipes found</h1>
         : 
         recipeList.hits.map(foods => (
-          <div key={foods.recipe.uri} onClick={()=>{RecipeInfoNavigate(foods.recipe.uri)}}>
+          <div key={foods.recipe.uri} onClick={()=>{RecipeInfoNavigate(foods.recipe)}}>
             <h1>{JSON.stringify(foods.recipe.label)}</h1>
           </div>
         ))
