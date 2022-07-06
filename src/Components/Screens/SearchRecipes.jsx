@@ -16,12 +16,17 @@ const SearchRecipes = () => {
     const res = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${searchParam}&app_id=4cde7fc0&app_key=ca33af6f38fbc21a10adf792542ea0be%09`)
     const recipes = await res.json()
     SetRecipeList(await recipes)
-    console.log(await recipes)
     if(await recipes.hits.length > 0){
       setSearchStatus("Found")
     }else{
       setSearchStatus("Not found")
     }
+  }
+
+  function RecipeInfoNavigate(uri){
+  let regex = /recipe\w+/ig;
+  let ID = uri.match(regex)
+  navigate(`/view:${ID}`)
   }
   
   // this will be triggered for every refresh or route change
@@ -56,7 +61,7 @@ const SearchRecipes = () => {
           <h1>No Recipes found</h1>
         : 
         recipeList.hits.map(foods => (
-          <div key={foods.recipe.uri}>
+          <div key={foods.recipe.uri} onClick={()=>{RecipeInfoNavigate(foods.recipe.uri)}}>
             <h1>{JSON.stringify(foods.recipe.label)}</h1>
           </div>
         ))
