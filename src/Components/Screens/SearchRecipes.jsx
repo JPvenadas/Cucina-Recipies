@@ -34,14 +34,15 @@ const SearchRecipes = () => {
     if(searchParam!==":"){
       setSearchStatus("Searching")
       getRecipe()
-    }else{
+    }
+    else{
     }
   },[navigate])
 
   return (
     <div>
       
-      <input placeholder='Search a Recipe' type="text" onChange={val => setSearchInput(val.target.value)} />
+      <input required placeholder='Search a Recipe' type="text" onChange={val => setSearchInput(val.target.value)} />
       <button onClick={() => {
         //Navigate to /Search:{and the recipe you wanted search for}
         //after navigating the useeffect will be executed and thus searching the recipe
