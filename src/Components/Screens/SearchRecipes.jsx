@@ -63,7 +63,7 @@ const SearchRecipes = () => {
         : 
         recipeList.hits.map(foods => (
           <div key={foods.recipe.uri} onClick={()=>{RecipeInfoNavigate(foods.recipe)}}>
-            <h1>{JSON.stringify(foods.recipe.label)}</h1>
+            <h1 className='text-red-200 underline font-xl'>{foods.recipe.label}</h1>
           </div>
         ))
         }
