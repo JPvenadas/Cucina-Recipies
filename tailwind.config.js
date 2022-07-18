@@ -16,7 +16,8 @@ module.exports = {
       backgroundImage:{
         'menu': "url('/src/Images/menu.jpg')",
         'star': "url('/src/Images/star.png')",
-        'background': 'url(/src/Images/background.jpg)'       
+        'background': 'url(/src/Images/background.jpg)',
+        'chef': "url('/src/Images/chef.png')"
       },
       screens:{
         'phone': "100px",
