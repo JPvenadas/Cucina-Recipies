@@ -18,12 +18,13 @@ const Navbar = () => {
       navbarContainer.current.classList.add("sticky")
     }else{
       navbarContainer.current.classList.add("h-[60px]")
+      navbarContainer.current.classList.remove("sticky")
     }
   }
 
   return (
     //main container
-    <div ref={navbarContainer} className='w-full h-[60px] justify-center overflow-hidden flex bg-transparent 
+    <div ref={navbarContainer} className='w-full relative z-[2] h-[60px] justify-center overflow-hidden flex bg-transparent 
     desktop:h-[110px] transition-all duration-1000'>
       <div ref={navbar} 
       className='w-[1000px] px-[20px] 
