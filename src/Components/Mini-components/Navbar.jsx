@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     //main container
-    <div ref={navbarContainer} className='w-full relative z-[2] h-[60px] justify-center overflow-hidden flex bg-transparent 
+    <div ref={navbarContainer} className='w-full fixed z-[2] h-[60px] justify-center overflow-hidden flex bg-transparent 
     desktop:h-[110px] transition-all duration-1000'>
       <div ref={navbar} 
       className='w-[1000px] px-[20px] 
@@ -35,7 +35,7 @@ const Navbar = () => {
           <div 
           className=''>
             <h1 
-            className='text-primary text-[25px] desktop:text-[30px] font-berkshire'>
+            className='text-primary text-[25px] desktop:text-[35px] font-berkshire'>
               Cucina
             </h1>
           </div>
@@ -51,7 +51,7 @@ const Navbar = () => {
         desktop:flex-row flex-1'>
           <ul 
           className='w-full flex flex-col gap-[20px] pb-[20px]
-          desktop:flex-row desktop:items-center desktop:justify-center desktop:gap-[80px] desktop:pb-[0]'>
+          desktop:flex-row desktop:items-center desktop:justify-center desktop:gap-[40px] desktop:pb-[0]'>
             <a href=""><li>Recipes</li></a>
             <a href=""><li>About</li></a>
             <a href=""><li>Information</li></a>
@@ -59,7 +59,7 @@ const Navbar = () => {
           <div 
           className='w-full flex justify-start items-center
           desktop:w-auto'>
-            <button className='bg-white flex justify-center items-center px-[20px] py-[5px] rounded-[15px]'>
+            <button className='bg-white shadow-md flex justify-center items-center px-[20px] py-[5px] rounded-[15px]'>
             <div className='w-[40px] h-[34px] bg-star'></div>
             <p className='font-bold text-primary inline-block whitespace-nowrap'>Star on Github</p>
             </button>

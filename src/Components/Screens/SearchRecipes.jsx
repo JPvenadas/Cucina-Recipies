@@ -40,7 +40,7 @@ const SearchRecipes = () => {
   },[navigate])
 
   return (
-    <div>
+    <div className=''>
       
       <input required placeholder='Search a Recipe' type="text" onChange={val => setSearchInput(val.target.value)} />
       <button onClick={() => {

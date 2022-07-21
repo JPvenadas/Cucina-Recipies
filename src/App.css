@@ -27,3 +27,26 @@ button{
         left: 0;
     }
 }
+
+.float1{
+    animation: float1 infinite alternate 2.5s ease;
+}
+.float2{
+    animation: float2 infinite alternate 2s ease;
+}
+@keyframes float1 {
+    from {
+        transform: translateY(0px);
+      }
+      to {
+        transform: translateY(-20px);
+      }
+}
+@keyframes float2 {
+    from {
+        transform: translateY(0px);
+      }
+      to {
+        transform: translateY(-15px);
+      }
+}

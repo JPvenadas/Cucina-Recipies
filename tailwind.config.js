@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       fontFamily:{
         'berkshire' : ['Berkshire Swash', 'cursive'],
-        'poppins': ['Poppins', 'sans-serif']
+        'poppins': ['Poppins', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif']
       },
       colors: {
         'primary': '#AD7F3C',
