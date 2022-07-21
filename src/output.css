@@ -654,6 +654,10 @@ video {
   left: -60px;
 }
 
+.left-\[-80px\] {
+  left: -80px;
+}
+
 .z-\[2\] {
   z-index: 2;
 }
@@ -694,6 +698,10 @@ video {
   height: 600px;
 }
 
+.h-\[650px\] {
+  height: 650px;
+}
+
 .max-h-\[700px\] {
   max-height: 700px;
 }
@@ -732,6 +740,10 @@ video {
 
 .w-\[650px\] {
   width: 650px;
+}
+
+.w-\[700px\] {
+  width: 700px;
 }
 
 .max-w-\[800px\] {
