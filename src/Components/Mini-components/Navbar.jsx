@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     //main container
     <div ref={navbarContainer} className='w-full fixed z-[2] h-[60px] justify-center overflow-hidden flex bg-transparent 
-    desktop:h-[110px] transition-all duration-1000'>
+    desktop:h-[110px] transition-all duration-700'>
       <div ref={navbar} 
       className='w-[1000px] px-[20px] 
       desktop:flex desktop:gap-[40px] '>
@@ -61,7 +61,7 @@ const Navbar = () => {
           desktop:w-auto'>
             <button className='bg-white shadow-md flex justify-center items-center px-[20px] py-[5px] rounded-[15px]'>
             <div className='w-[40px] h-[34px] bg-star'></div>
-            <p className='font-bold text-primary inline-block whitespace-nowrap'>Star on Github</p>
+            <p className='font-bold !text-primary inline-block whitespace-nowrap'>Star on Github</p>
             </button>
           </div>
         </nav>

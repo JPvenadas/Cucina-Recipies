@@ -7,9 +7,10 @@ import SearchRecipes from './Components/Screens/SearchRecipes'
 import Errorpage from './Components/Screens/404'
 import Navbar from './Components/Mini-components/Navbar'
 
+
 const App = () => {
   return (
-    <div>
+    <div className='relative'>
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>

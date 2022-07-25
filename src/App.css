@@ -11,16 +11,20 @@ button{
 
 
 .sticky{
-    background-color: #FFEACB !important;
+    background-color: #946621 !important;
     position: fixed !important;
     top: 0;
     left: 0;
+    
+}
+.sticky *{
+    color: white
 }
 
 
 @media (min-width: 900px) {
     .sticky{
-        background-color: #FFEACB !important;
+        background-color: #946621 !important;
         position: fixed !important;
         height: 80px !important;
         top: 0;
