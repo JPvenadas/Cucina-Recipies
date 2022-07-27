@@ -3,9 +3,12 @@ import chefpic from './../../../Images/chef.png'
 
 const BackgroundImage = () => {
   return (
-    <div className='flex-1 h-full min-h-[550px] relative'>
+    <div className='relative h-auto flex justify-center items-center
+    desktop:h-full desktop:flex-1 desktop:min-h-[550px]'>
           <img src={chefpic} alt="chef" 
-          className='w-[700px] h-[650px] absolute max-w-[800px] bottom-[-150px] left-[-80px]'/>
+          className=' w-[400px] h-[365px]
+          tablet:w-[500px] tablet:h-[467px]
+          desktop:w-[700px] desktop:h-[650px] desktop:absolute max-w-[800px] desktop:bottom-[-150px] desktop:left-[-80px]'/>
     </div>
   )
 }

@@ -6,7 +6,7 @@ import Discord from './../../../Images/discord.png'
 
 const Developer = () => {
   return (
-    <div className='fixed left-[0vw] bottom-[0vh] h-[60vh] w-[50px] flex-nowrap flex justify-end items-center'>
+    <div className='hidden fixed left-[0vw] bottom-[0vh] h-[60vh] w-[50px] flex-nowrap desktop:flex justify-end items-center'>
       <div className=' flex shrink-0 flex-row rotate-[-90deg] relative left-[150px] gap-[15px]'>
         <div>
           Created by 
