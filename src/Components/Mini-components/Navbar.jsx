@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
  
@@ -52,9 +53,9 @@ const Navbar = () => {
           <ul 
           className='w-full flex flex-col gap-[20px] pb-[20px]
           desktop:flex-row desktop:items-center desktop:justify-center desktop:gap-[40px] desktop:pb-[0]'>
-            <a href=""><li>Recipes</li></a>
-            <a href=""><li>About</li></a>
-            <a href=""><li>Information</li></a>
+            <Link to="/search:">Recipe</Link>
+            <Link to="/about">About</Link>
+            <Link to="/Features">Features</Link>
           </ul>
           <div 
           className='w-full flex justify-start items-center
