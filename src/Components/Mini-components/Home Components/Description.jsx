@@ -28,7 +28,7 @@ const Description = () => {
           <img className='hidden absolute bottom-[60px] float2 right-[-15px] z-[2] desktop:inline-block' src={pan} alt="" />
           <div>
               <Link to='/search:'
-                  className='text-white shadow-md font-[700] font-inter text-[14px] bg-primary rounded-[66px] px-[35px] py-[10px]'>
+                  className='text-white shadow-[5px_5px_10px_2px_rgb(0,0,0,0.2)] font-[700] font-inter text-[14px] bg-primary rounded-[66px] px-[35px] py-[10px]'>
                   Get started
               </Link>
           </div>

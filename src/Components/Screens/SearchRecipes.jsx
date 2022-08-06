@@ -13,9 +13,18 @@ const SearchRecipes = () => {
 
   // function to get the list of recipes
   async function getRecipe(){
-    const res = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${searchParam}&app_id=4cde7fc0&app_key=ca33af6f38fbc21a10adf792542ea0be%09`)
-    const recipes = await res.json()
-    SetRecipeList(await recipes)
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': '67389ce453mshf94102834b9b406p1b0d77jsn4ae265a687f9',
+        'X-RapidAPI-Host': 'edamam-recipe-search.p.rapidapi.com'
+      }
+    };
+    
+    let res = await fetch(`https://edamam-recipe-search.p.rapidapi.com/search?q=${searchParam}&to=30`, options)
+    let recipes = await res.json()
+    SetRecipeList(recipes)
+      
     if(await recipes.hits.length > 0){
       setSearchStatus("Found")
     }else{
@@ -40,8 +49,8 @@ const SearchRecipes = () => {
   },[navigate])
 
   return (
-    <div className=''>
-      
+    <div className='relative top-[100px]'>
+
       <input required placeholder='Search a Recipe' type="text" onChange={val => setSearchInput(val.target.value)} />
       <button onClick={() => {
         //Navigate to /Search:{and the recipe you wanted search for}
