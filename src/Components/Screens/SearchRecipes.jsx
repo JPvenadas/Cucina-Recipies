@@ -1,6 +1,8 @@
 import React from 'react'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { useEffect, useState, useRef } from 'react'
+import Developer from '../Mini-components/Home Components/Developer'
+import Recommendation from '../Mini-components/searchRecipe Components/Recommendation'
 
 const SearchRecipes = () => {
   let {searchParam} = useParams() // the parameter from the route
@@ -49,34 +51,49 @@ const SearchRecipes = () => {
   },[navigate])
 
   return (
-    <div className='relative top-[100px]'>
-
-      <input required placeholder='Search a Recipe' type="text" onChange={val => setSearchInput(val.target.value)} />
-      <button onClick={() => {
-        //Navigate to /Search:{and the recipe you wanted search for}
-        //after navigating the useeffect will be executed and thus searching the recipe
-        navigate(`/Search:${searchInput}`)
-      }}>
-        Search
-      </button>
-      <div ref={container}>
-        {
-        searchStatus === "No search yet"?
-          <h1>Search now</h1>
-        :
-        searchStatus === "Searching"?
-          <h1>Searching</h1>
-        : 
-        searchStatus === "Not found"?
-          <h1>No Recipes found</h1>
-        : 
-        recipeList.hits.map(foods => (
-          <div key={foods.recipe.uri} onClick={()=>{RecipeInfoNavigate(foods.recipe)}}>
-            <h1 className='text-red-200 underline font-xl'>{foods.recipe.label}</h1>
+    <div className='relative bg-tertiary flex justify-center pt-[80px] desktop:pt-[120px]'>
+      <div className='w-[1000px] px-[20px]'>
+        <div className='flex flex-col-reverse gap-[30px]'>
+          <div className='flex flex-col justify-center text-center'>
+            <h2 className='font-poppins text-[26px] font-bold text-primary'>Recommendations</h2>
+            <p className='font-inter relative bottom-[5px] underline text-[15px] font-[600] text-grayish'>Dont know what to cook?</p>
           </div>
-        ))
-        }
+
+          <div className='flex justify-center'>
+            <div className='flex w-[350px] h-[40px] rounded-[15px] overflow-hidden shadow-md'>
+              <input className=' w-[calc(100%-53px)] px-[20px] text-[14px]' required placeholder='Search a Recipe' type="text" onChange={val => setSearchInput(val.target.value)} />
+              <button className='bg-search w-[53px] bg-[length:100%_100%]' onClick={() => {
+                //Navigate to /Search:{and the recipe you wanted search for}
+                //after navigating the useeffect will be executed and thus searching the recipe
+                navigate(`/Search:${searchInput}`)
+              }}>
+
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className='bg-white rounded-[50px] px-[30px] py-[50px]'
+          ref={container}>
+          {
+            searchStatus === "No search yet" ?
+            <Recommendation/>
+              :
+              searchStatus === "Searching" ?
+                <h1>Searching</h1>
+                :
+                searchStatus === "Not found" ?
+                  <h1>No Recipes found</h1>
+                  :
+                  recipeList.hits.map(foods => (
+                    <div key={foods.recipe.uri} onClick={() => { RecipeInfoNavigate(foods.recipe) }}>
+                      <h1 className='text-red-200 underline font-xl'>{foods.recipe.label}</h1>
+                    </div>
+                  ))
+          }
+        </div>
       </div>
+      <Developer />
     </div>
   )
 }

@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         'primary': '#AD7F3C',
         'secondary': '#FFEACB',
+        'tertiary': '#F9F3E3',
         'grayish': '#6D6D6D',
         'greenish': '#6D935C'
       },
@@ -18,7 +19,8 @@ module.exports = {
         'menu': "url('/src/Images/menu.jpg')",
         'star': "url('/src/Images/star.png')",
         'background': 'url(/src/Images/background.jpg)',
-        'chef': "url('/src/Images/chef.png')"
+        'chef': "url('/src/Images/chef.png')",
+        'search': "url('/src/Images/search.png')"
       },
       screens:{
         'phone': "100px",

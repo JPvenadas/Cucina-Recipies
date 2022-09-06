@@ -8,6 +8,9 @@
 button{
     border-style: none;
 }
+input{
+ outline: none;
+}
 
 
 .sticky{
@@ -24,7 +27,7 @@ button{
 
 @media (min-width: 900px) {
     .sticky{
-        background-color: #946621 !important;
+        background-color: #AD7F3C !important;
         position: fixed !important;
         height: 80px !important;
         top: 0;
@@ -53,4 +56,7 @@ button{
       to {
         transform: translateY(-15px);
       }
+}
+.flex-flow-1 {
+    flex-flow: row wrap;
 }
