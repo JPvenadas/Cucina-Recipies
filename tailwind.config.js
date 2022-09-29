@@ -20,7 +20,8 @@ module.exports = {
         'star': "url('/src/Images/star.png')",
         'background': 'url(/src/Images/background.jpg)',
         'chef': "url('/src/Images/chef.png')",
-        'search': "url('/src/Images/search.png')"
+        'search': "url('/src/Images/search.png')",
+        'recbuttoncolor': "linear-gradient(180deg, #D58E28 1.04%, #DF9A36 100%)"
       },
       screens:{
         'phone': "100px",
