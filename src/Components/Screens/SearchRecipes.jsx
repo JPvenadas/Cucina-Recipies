@@ -51,16 +51,19 @@ const SearchRecipes = () => {
   },[navigate])
 
   return (
-    <div className='relative bg-tertiary flex justify-center pt-[80px] desktop:pt-[120px]'>
+    <div className='relative bg-tertiary flex justify-center pt-[80px] 
+    desktop:pt-[120px]'>
       <div className='w-[1000px] px-[20px]'>
-        <div className='flex flex-col-reverse gap-[30px]'>
-          <div className='flex flex-col justify-center text-center'>
+        <div className='flex flex-col-reverse gap-[30px] 
+        desktop:flex-row desktop:justify-between desktop:px-[30px] desktop:my-[20px]'>
+          <div className='flex flex-col justify-center text-center 
+          desktop:justify-start desktop:text-left'>
             <h2 className='font-poppins text-[26px] font-bold text-primary'>Recommendations</h2>
             <p className='font-inter relative bottom-[5px] underline text-[15px] font-[600] text-grayish'>Dont know what to cook?</p>
           </div>
 
           <div className='flex justify-center'>
-            <div className='flex w-[350px] h-[40px] rounded-[15px] overflow-hidden shadow-md'>
+            <div className='flex w-[350px] h-[40px] rounded-[15px] overflow-hidden shadow-md desktop:w-[400px]'>
               <input className=' w-[calc(100%-53px)] px-[20px] text-[14px]' required placeholder='Search a Recipe' type="text" onChange={val => setSearchInput(val.target.value)} />
               <button className='bg-search w-[53px] bg-[length:100%_100%]' onClick={() => {
                 //Navigate to /Search:{and the recipe you wanted search for}
