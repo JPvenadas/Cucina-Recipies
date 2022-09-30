@@ -3,6 +3,8 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { useEffect, useState, useRef } from 'react'
 import Developer from '../Mini-components/Home Components/Developer'
 import Recommendation from '../Mini-components/searchRecipe Components/Recommendation'
+import Loadingpan from '../Mini-components/searchRecipe Components/Loadingpan'
+import ScrollUpBtn from '../Mini-components/searchRecipe Components/ScrollUpBtn'
 
 const SearchRecipes = () => {
   let {searchParam} = useParams() // the parameter from the route
@@ -58,8 +60,8 @@ const SearchRecipes = () => {
         desktop:flex-row desktop:justify-between desktop:px-[30px] desktop:my-[20px]'>
           <div className='flex flex-col justify-center text-center 
           desktop:justify-start desktop:text-left'>
-            <h2 className='font-poppins text-[26px] font-bold text-primary'>Recommendations</h2>
-            <p className='font-inter relative bottom-[5px] underline text-[15px] font-[600] text-grayish'>Dont know what to cook?</p>
+            <h2 className='font-poppins text-[26px] font-bold text-greenish'>Recommendations</h2>
+            <p className='font-inter relative bottom-[5px] text-[15px] font-[600] text-grayish'>Dont know what to cook?</p>
           </div>
 
           <div className='flex justify-center'>
@@ -83,7 +85,9 @@ const SearchRecipes = () => {
             <Recommendation/>
               :
               searchStatus === "Searching" ?
-                <h1>Searching</h1>
+                <div className='flex flex-flow-1 justify-center'>
+                  <Loadingpan />
+                </div>
                 :
                 searchStatus === "Not found" ?
                   <h1>No Recipes found</h1>
@@ -97,6 +101,7 @@ const SearchRecipes = () => {
         </div>
       </div>
       <Developer />
+      <ScrollUpBtn/>
     </div>
   )
 }

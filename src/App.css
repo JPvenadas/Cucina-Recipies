@@ -41,6 +41,10 @@ input{
 .float2{
     animation: float2 infinite alternate 2s ease;
 }
+.shown{
+    display: block !important;
+    animation: float1 1s ease forwards;
+}
 @keyframes float1 {
     from {
         transform: translateY(0px);
@@ -49,6 +53,7 @@ input{
         transform: translateY(-20px);
       }
 }
+
 @keyframes float2 {
     from {
         transform: translateY(0px);

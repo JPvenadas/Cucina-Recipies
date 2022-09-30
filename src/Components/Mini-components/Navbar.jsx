@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     //main container
     <div ref={navbarContainer} className='w-full fixed z-[2] h-[60px] justify-center overflow-hidden flex bg-transparent 
-    desktop:h-[110px] transition-all duration-700'>
+    desktop:h-[110px] transition-all duration-700 desktop:rounded-bl-[50px]'>
       <div ref={navbar} 
       className='w-[1000px] px-[20px] 
       desktop:flex desktop:gap-[40px] '>

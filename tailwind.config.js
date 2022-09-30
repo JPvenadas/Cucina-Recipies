@@ -21,6 +21,7 @@ module.exports = {
         'background': 'url(/src/Images/background.jpg)',
         'chef': "url('/src/Images/chef.png')",
         'search': "url('/src/Images/search.png')",
+        'up': "url('/src/Images/up.jpg')",
         'recbuttoncolor': "linear-gradient(180deg, #D58E28 1.04%, #DF9A36 100%)"
       },
       screens:{
