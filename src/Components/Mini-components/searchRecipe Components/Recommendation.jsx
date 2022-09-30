@@ -1,11 +1,12 @@
 import React from 'react'
 import RecItems from './RecItems'
 import { useState, useEffect } from 'react'
-
+import Loadingpan from './Loadingpan'
 
 const Recommendation = () => {
   
-  const [recArray, SetRecArray] = useState([])
+  const [recArray, setRecArray] = useState([])
+  const [status, setStatus] = useState("searching")
 
   const getRec = async()=>{
     const res = await fetch("https://random-data-api.com/api/food/random_food?size=40")
@@ -17,18 +18,18 @@ const Recommendation = () => {
     dishArr =  dishArr.filter((item, index) =>{
       return dishArr.indexOf(item) === index && item.length <= 15;
     })
-    
-    SetRecArray(dishArr)
-    
+    setStatus("Fetched")
+    setRecArray(dishArr)
   }
     useEffect(()=>{
       getRec()
     },[])
   return (
     <div className='flex flex-flow-1 justify-center'>
-     {recArray? recArray.map(recipe =>(
+     {status == "Fetched"? recArray.map(recipe =>(
         <RecItems key={recipe} text={recipe}/>
-     )): ""}
+     )): <Loadingpan/>}
+      
     </div>
   )
 }
