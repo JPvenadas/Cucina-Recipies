@@ -83,7 +83,7 @@ const SearchRecipes = () => {
           ref={container}>
           {
             searchStatus === "No search yet" ?
-            <Recommendation/>
+            <SearchResults/>
               :
               searchStatus === "Searching" ?
                 <div className='flex flex-flow-1 justify-center'>

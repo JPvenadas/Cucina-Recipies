@@ -13,7 +13,8 @@ module.exports = {
         'secondary': '#FFEACB',
         'tertiary': '#F9F3E3',
         'grayish': '#6D6D6D',
-        'greenish': '#6D935C'
+        'greenish': '#6D935C',
+        'lighten': '#FFE5B2'
       },
       backgroundImage:{
         'menu': "url('/src/Images/menu.jpg')",
