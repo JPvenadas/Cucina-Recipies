@@ -658,6 +658,22 @@ video {
   left: 150px;
 }
 
+.top-\[-10px\] {
+  top: -10px;
+}
+
+.right-\[0px\] {
+  right: 0px;
+}
+
+.bottom-\[15px\] {
+  bottom: 15px;
+}
+
+.right-\[40px\] {
+  right: 40px;
+}
+
 .right-\[2vw\] {
   right: 2vw;
 }
@@ -672,6 +688,10 @@ video {
 
 .z-\[1\] {
   z-index: 1;
+}
+
+.m-\[15px\] {
+  margin: 15px;
 }
 
 .mx-\[10px\] {
@@ -756,6 +776,26 @@ video {
   height: 45px;
 }
 
+.h-\[175px\] {
+  height: 175px;
+}
+
+.h-\[100px\] {
+  height: 100px;
+}
+
+.h-\[100\%\] {
+  height: 100%;
+}
+
+.h-\[50px\] {
+  height: 50px;
+}
+
+.h-\[\.8px\] {
+  height: .8px;
+}
+
 .max-h-\[700px\] {
   max-height: 700px;
 }
@@ -822,6 +862,22 @@ video {
 
 .w-\[260px\] {
   width: 260px;
+}
+
+.w-\[420px\] {
+  width: 420px;
+}
+
+.w-\[80px\] {
+  width: 80px;
+}
+
+.w-\[100px\] {
+  width: 100px;
+}
+
+.w-\[250px\] {
+  width: 250px;
 }
 
 .max-w-\[800px\] {
@@ -904,6 +960,10 @@ video {
   gap: 15px;
 }
 
+.gap-\[5px\] {
+  gap: 5px;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -926,6 +986,14 @@ video {
 
 .rounded-\[66px\] {
   border-radius: 66px;
+}
+
+.rounded-\[30px\] {
+  border-radius: 30px;
+}
+
+.rounded-\[45px\] {
+  border-radius: 45px;
 }
 
 .rounded-\[100\%\] {
@@ -987,6 +1055,10 @@ video {
   background-position: center;
 }
 
+.p-\[30px\] {
+  padding: 30px;
+}
+
 .px-\[20px\] {
   padding-left: 20px;
   padding-right: 20px;
@@ -1038,6 +1110,10 @@ video {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .font-berkshire {
   font-family: Berkshire Swash, cursive;
 }
@@ -1076,6 +1152,14 @@ video {
 
 .text-\[10px\] {
   font-size: 10px;
+}
+
+.text-\[11px\] {
+  font-size: 11px;
+}
+
+.text-\[12px\] {
+  font-size: 12px;
 }
 
 .font-semibold {
@@ -1156,6 +1240,12 @@ video {
 .shadow-\[0px_3px_3px_1px_rgba\(0\2c 0\2c 0\2c \.25\)\] {
   --tw-shadow: 0px 3px 3px 1px rgba(0,0,0,.25);
   --tw-shadow-colored: 0px 3px 3px 1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-\[1px_1px_1px_1px_rgb\(0\2c 0\2c 0\2c 0\.05\)\] {
+  --tw-shadow: 1px 1px 1px 1px rgb(0,0,0,0.05);
+  --tw-shadow-colored: 1px 1px 1px 1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 

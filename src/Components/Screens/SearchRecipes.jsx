@@ -5,6 +5,7 @@ import Developer from '../Mini-components/Home Components/Developer'
 import Recommendation from '../Mini-components/searchRecipe Components/Recommendation'
 import Loadingpan from '../Mini-components/searchRecipe Components/Loadingpan'
 import ScrollUpBtn from '../Mini-components/searchRecipe Components/ScrollUpBtn'
+import SearchResults from '../Mini-components/searchRecipe Components/SearchResults'
 
 const SearchRecipes = () => {
   let {searchParam} = useParams() // the parameter from the route
@@ -78,7 +79,7 @@ const SearchRecipes = () => {
           </div>
         </div>
 
-        <div className='bg-white rounded-[50px] px-[30px] py-[50px]'
+        <div className='bg-transparent rounded-[50px] px-[30px] py-[50px]'
           ref={container}>
           {
             searchStatus === "No search yet" ?
