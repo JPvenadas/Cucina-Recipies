@@ -9,13 +9,14 @@ import SearchResults from '../Mini-components/searchRecipe Components/SearchResu
 
 const SearchRecipes = () => {
   let {searchParam} = useParams() // the parameter from the route
+  searchParam = searchParam.replace(":", "")
   let [recipeList, SetRecipeList] = useState({hits:[]}); // recipes coming from the fetch
   const [searchInput, setSearchInput] = useState(); // the value of the search input
   const [searchStatus, setSearchStatus] = useState("No search yet");// status of the search (Searching, Found, or not found)
 
   let navigate = useNavigate() // for navigation
   let container = useRef("")
-
+  
   // function to get the list of recipes
   async function getRecipe(){
     const options = {
@@ -28,15 +29,16 @@ const SearchRecipes = () => {
     
     let res = await fetch(`https://edamam-recipe-search.p.rapidapi.com/search?q=${searchParam}&to=30`, options)
     let recipes = await res.json()
+    //set the recipes from the api to the recipelist state
     SetRecipeList(recipes)
-      
+    //update the status if the recipe exists
     if(await recipes.hits.length > 0){
       setSearchStatus("Found")
     }else{
       setSearchStatus("Not found")
     }
   }
-
+  
   function RecipeInfoNavigate(recipe){
   let regex = /recipe\w+/ig;
   let ID = recipe.uri.match(regex)
@@ -45,20 +47,21 @@ const SearchRecipes = () => {
   
   // this will be triggered for every refresh or route change
   useEffect(()=>{
-    if(searchParam!==":"){
+    if(searchParam!==""){
       setSearchStatus("Searching")
       getRecipe()
     }
     else{
     }
   },[navigate])
-
+   
+  
   return (
-    <div className='relative bg-tertiary flex justify-center pt-[80px] 
+    <div className='relative bg-tertiary flex justify-center min-h-full pt-[80px] 
     desktop:pt-[120px]'>
-      <div className='w-[1000px] px-[20px]'>
+      <div className='w-[1000px] px-[20px] flex flex-col large-desktop:w-[1500px]'>
         <div className='flex flex-col-reverse gap-[30px] 
-        desktop:flex-row desktop:justify-between desktop:px-[30px] desktop:my-[20px]'>
+        desktop:flex-row desktop:justify-between w-full desktop:px-[30px] desktop:my-[20px] large-desktop:max-w-[1000px] self-center'>
           <div className='flex flex-col justify-center text-center 
           desktop:justify-start desktop:text-left'>
             <h2 className='font-poppins text-[26px] font-bold text-greenish'>Recommendations</h2>
@@ -79,11 +82,11 @@ const SearchRecipes = () => {
           </div>
         </div>
 
-        <div className='bg-transparent rounded-[50px] px-[30px] py-[50px]'
+        <div className='bg-white rounded-[50px] px-[30px] py-[50px]'
           ref={container}>
           {
             searchStatus === "No search yet" ?
-            <SearchResults/>
+            <Recommendation/>
               :
               searchStatus === "Searching" ?
                 <div className='flex flex-flow-1 justify-center'>
@@ -93,11 +96,7 @@ const SearchRecipes = () => {
                 searchStatus === "Not found" ?
                   <h1>No Recipes found</h1>
                   :
-                  recipeList.hits.map(foods => (
-                    <div key={foods.recipe.uri} onClick={() => { RecipeInfoNavigate(foods.recipe) }}>
-                      <h1 className='text-red-200 underline font-xl'>{foods.recipe.label}</h1>
-                    </div>
-                  ))
+                 <SearchResults recipeList={recipeList.hits}/>
           }
         </div>
       </div>

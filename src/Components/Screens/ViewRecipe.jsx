@@ -6,7 +6,7 @@ const ViewRecipe = () => {
   const {state} = useLocation()
   let {recipeParam} = useParams()
   recipeParam = recipeParam.replace(":", "")
-
+  console.log(state)
   
   useEffect(()=>{
     

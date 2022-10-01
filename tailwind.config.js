@@ -28,7 +28,8 @@ module.exports = {
       screens:{
         'phone': "100px",
         'tablet': '600px',
-        'desktop': '900px'
+        'desktop': '900px',
+        'large-desktop': '1600px'
       }
     },
   },

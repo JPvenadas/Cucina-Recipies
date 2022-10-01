@@ -5,7 +5,7 @@ import Animation from './../../../lottie/cooking-ingredients.json'
 const Loadingpan = () => {
   return (
     <div>
-      <Lottie className='w-[500px] h-[400px]' animationData={Animation} loop={true} />
+      <Lottie className='w-[500px]' animationData={Animation} loop={true} />
     </div>
   )
 }
