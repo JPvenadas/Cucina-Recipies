@@ -16,6 +16,9 @@ const SearchRecipes = () => {
 
   let navigate = useNavigate() // for navigation
   let container = useRef("")
+  let notifheader = useRef("")
+  let notifsub = useRef("")
+  
   
   // function to get the list of recipes
   async function getRecipe(){
@@ -55,7 +58,21 @@ const SearchRecipes = () => {
     }
   },[navigate])
    
-  
+  useEffect(()=>{
+    if(searchStatus == "Searching"){
+      notifheader.current.innerHTML =`Searching`
+      notifsub.current.innerHTML = `Loading results for ${searchParam}`
+      container.current.style.background = "white"
+    }
+    else if(searchStatus == "No search yet"){
+      notifheader.current.innerHTML =`Recommendations`
+      notifsub.current.innerHTML = `Dont know what to cook?`
+    }else{
+      notifheader.current.innerHTML =`Search Results`
+      notifsub.current.innerHTML = `Recipes for ${searchParam}`
+      container.current.style.background = "transparent"
+    }
+  },[searchStatus])
   return (
     <div className='relative bg-tertiary flex justify-center min-h-full pt-[80px] 
     desktop:pt-[120px]'>
@@ -64,8 +81,8 @@ const SearchRecipes = () => {
         desktop:flex-row desktop:justify-between w-full desktop:px-[30px] desktop:my-[20px] large-desktop:max-w-[1000px] self-center'>
           <div className='flex flex-col justify-center text-center 
           desktop:justify-start desktop:text-left'>
-            <h2 className='font-poppins text-[26px] font-bold text-greenish'>Recommendations</h2>
-            <p className='font-inter relative bottom-[5px] text-[15px] font-[600] text-grayish'>Dont know what to cook?</p>
+            <h2 ref={notifheader} className='font-poppins text-[26px] font-bold text-greenish'>Recommendations</h2>
+            <p ref={notifsub} className='font-inter relative bottom-[5px] text-[15px] font-[600] text-grayish'>Dont know what to cook?</p>
           </div>
 
           <div className='flex justify-center'>
